@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 
 app.use('/', routes)
-// app.use(express.static('public'))
+app.use(express.static('public'))
 
 module.exports = function (db) {
   app.set('db', db)

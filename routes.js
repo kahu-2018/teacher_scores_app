@@ -55,7 +55,6 @@ routes.get('/students/:id', (req, res) => {
   .join('student_subjects', 'students.id', 'student_subjects.student_id')
   .select('subject_id', 'id')
   .join('scores', 'student_subjects.id', 'scores.student_subject_id')
-  .
   .then((student)=> {
     // console.log(student)
   res.render('student-score', student)
