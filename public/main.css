@@ -1,0 +1,64 @@
+body {
+  background-color: steelblue;
+  font-family: 'Muli', sans-serif;
+  color: #01346E;
+  text-align: center; 
+}
+
+.main-page-button {
+  background-color: #095DBE;
+  width: 18rem;
+  height: 25rem;
+  display: inline-block;
+}
+
+
+h1 {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+a:link {
+  text-decoration: none;
+  color: #01346E;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: auto auto 5px auto
+}
+
+a:visited {
+  text-decoration: none;
+  color: orangered;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: auto auto 5px auto
+}
+
+a:hover {
+  text-decoration: none;
+  color: #01346E;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: auto auto 5px auto
+}
+
+a:active {
+  text-decoration: none;
+  color: orangered;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: auto auto 5px auto
+}
+
+.index-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.indexImage {
+  height: 15rem;
+  width: 15rem;
+  margin-top: 4rem;
+}
+

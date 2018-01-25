@@ -1,0 +1,12 @@
+<div>
+  <h1>STUDENT'S PERFORMANCE ACROSS SUBJECTS</h1>
+  <h2>Student Name: {{studentName}}</h2>
+  <h2>Student ID: {{studentID}}</h2>
+</div>
+<div>
+  <ul>
+    {{#each studentScores}}
+    <li>{{subjectName}},{{subjectID}}: {{subjectScore}}</li>
+    {{/each}}
+  </ul>
+</div>
