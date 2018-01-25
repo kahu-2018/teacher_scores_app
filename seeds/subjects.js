@@ -5,11 +5,11 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('subjects').insert([
-        {id: 1, subject_name: 'Maths'},
-        {id: 2, subject_name: 'Science'},
-        {id: 3, subject_name: 'English'},
-        {id: 4, subject_name: 'History'},
-        {id: 5, subject_name: 'Geography'},
+        {id: 1001, subject_name: 'Maths'},
+        {id: 1002, subject_name: 'Science'},
+        {id: 1003, subject_name: 'English'},
+        {id: 1004, subject_name: 'History'},
+        {id: 1005, subject_name: 'Geography'},
       ]);
     });
 };
