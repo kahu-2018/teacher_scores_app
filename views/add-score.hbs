@@ -1,0 +1,14 @@
+<div>
+  <h1>ADD SCORE</h1>
+</div>
+<div>
+  <form method="post">
+    Student's ID: {{studentID}}<br>
+    <ul>
+      {{#each studentScore}} {{! When enter student's ID, courses chosen by that student appear automatically}}
+      <li>{{subjectID}}<input type="number" name: "score"></li>
+      {{/each}}
+    </ul>
+    <input type="submit" value="submit">
+  </form>
+</div>
