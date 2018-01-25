@@ -12,7 +12,17 @@ routes.get('/home', (req, res) => {
 })
 
 routes.get("/students", (req, res) => {
-  res.render('students-list', {})
+  var db = req.app.get('db')
+
+  db('students')
+    .select()
+    .then((student) => {
+      console.log(student)
+      res.render('students-list', {student})
+    })
+    .catch((err) => {
+      res.send('Problem loading the page' + err.message)
+    })
 })
 
 routes.get("/subjects", (req, res) => {
@@ -26,9 +36,22 @@ routes.get("/add-student", (req, res) => {
 
 routes.post("/add-student", (req, res) => {
   var body = req.body
+
   console.log(body)
+  db('students')
+  .insert({first_name:body.firstname, last_name:body.lastname})
+
   res.redirect("/confirmationPage")
 })
+
+routes.get('/students/:id/add-score', (req, res) => {
+  res.render('add-score', {})
+})
+
+routes.post('/add-score', (res,req) => {
+  res.reidrect('/confirmationPage', {})
+})
+
 module.exports = routes
 
 routes.get("/confirmationPage", (req, res)=> {
