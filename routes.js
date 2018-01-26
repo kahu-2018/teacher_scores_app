@@ -43,7 +43,7 @@ routes.post("/add-student", (req, res) => {
   res.redirect("/confirmationPage")
 })
 
-routes.get('/students-list/:id', (req, res) => {
+routes.get('/studentslist/:id', (req, res) => {
   var db = req.app.get('db')
 
   var stud_id= req.params.id
