@@ -40,7 +40,12 @@ routes.get("/subjects-list", (req, res) => {
 })
 
 routes.get("/add-student", (req, res) => {
-  res.render("add-student")
+  var db = req.app.get('db')
+  db('subjects')
+    .then(subjects => {
+      res.render("add-student", {subjects})
+
+    })
 })
 
 
@@ -52,7 +57,7 @@ routes.post("/add-student", (req, res) => {
   .then((newstudent) => {
     console.log(newstudent)
     db('student_subject')
-      .insert({subject_id: body.course1[0], student_id: newstudent[0]})
+      .insert([{subject_id: body.course1, student_id: newstudent[0]}, {subject_id: body.course2, student_id: newstudent[0]}, {subject_id: body.course3, student_id: newstudent[0]}])
       .then((subject_student_id) => {
         res.redirect("confirmationPage")
       })

@@ -7,29 +7,23 @@
     <p><em>Please select 3 courses for this semester</em></p>
     Course 1:<br>
       <select name="course1">
-      <option value="1001">Math</option>
-      <option value="1002">Science</option>
-      <option value="1003">English</option>
-      <option value="1004">History</option>
-      <option value="1005">Geography</option>
+        {{#each subjects}}
+          <option value={{id}}>{{subject_name}}</option>
+        {{/each}}
       </select>
       <br><br>
     Course 2:<br>
-      <select name="course1">
-      <option value="1001">Math</option>
-      <option value="1002">Science</option>
-      <option value="1003">English</option>
-      <option value="1004">History</option>
-      <option value="1005">Geography</option>
+      <select name="course2">
+        {{#each subjects}}
+        <option value={{id}}>{{subject_name}}</option>
+        {{/each}}
       </select>
       <br><br>
     Course 3:<br>
-      <select name="course1">
-      <option value="1001">Math</option>
-      <option value="1002">Science</option>
-      <option value="1003">English</option>
-      <option value="1004">History</option>
-      <option value="1005">Geography</option>
+      <select name="course3">
+        {{#each subjects}}
+        <option value={{id}}>{{subject_name}}</option>
+        {{/each}}
       </select>
       <br><br>
     <input type="submit" value="submit">
