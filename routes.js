@@ -45,12 +45,18 @@ routes.get("/add-student", (req, res) => {
 
 
 routes.post("/add-student", (req, res) => {
+  var db = req.app.get('db')
   var body = req.body
-
   db('students')
   .insert({first_name:body.firstname, last_name:body.lastname})
-
-  res.redirect("/confirmationPage")
+  .then((newstudent) => {
+    console.log(newstudent)
+    db('student_subject')
+      .insert({subject_id: body.course1[0], student_id: newstudent[0]})
+      .then((subject_student_id) => {
+        res.redirect("confirmationPage")
+      })
+  })
 })
 
 routes.get('/students-list/:id', (req, res) => {
