@@ -76,3 +76,11 @@ h1 {
   align-content: center;
   margin: auto;
 }
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
