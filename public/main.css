@@ -10,6 +10,8 @@ body {
   width: 18rem;
   height: 25rem;
   display: inline-block;
+  margin-left: 10px;
+  border-radius: 20px;
 }
 
 
@@ -18,34 +20,34 @@ h1 {
   font-size: 3rem;
 }
 
-a:link {
+.main-page-button a:link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: auto auto 5px auto
+}
+
+.main-page-button a:visited {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: auto auto 5px auto
+}
+
+.main-page-button a:hover {
   text-decoration: none;
   color: #01346E;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin: auto auto 5px auto
 }
 
-a:visited {
+.main-page-button a:active {
   text-decoration: none;
-  color: orangered;
-  font-size: 2rem;
-  font-weight: bold;
-  margin: auto auto 5px auto
-}
-
-a:hover {
-  text-decoration: none;
-  color: #01346E;
-  font-size: 2rem;
-  font-weight: bold;
-  margin: auto auto 5px auto
-}
-
-a:active {
-  text-decoration: none;
-  color: orangered;
-  font-size: 2rem;
+  color: white;
+  font-size: 1.5rem;
   font-weight: bold;
   margin: auto auto 5px auto
 }
