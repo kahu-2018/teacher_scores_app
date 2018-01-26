@@ -2,7 +2,7 @@
 <div>
  <ul>
    {{#each students}}
-    <li>{{student.name}}, {{student.id}}, <a href="/student-score/{{studentid}}">See scores</a>, <a href="/add-score">Add score</a></li>
+    <li>{{first_name}} {{last_name}} <a href="/students-list/{{id}}">See scores</a> <!--<a href="/students/{{id}}/add-score">Add score</a>--></li>
    {{/each}}
 
    {{#each student}}
