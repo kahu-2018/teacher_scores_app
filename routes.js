@@ -25,8 +25,18 @@ routes.get("/students-list", (req, res) => {
     })
 })
 
-routes.get("/subjects", (req, res) => {
-  res.render("subjects-list", {})
+routes.get("/subjects-list", (req, res) => {
+  var db = req.app.get('db')
+
+  db('subjects')
+    .select()
+    .then((subjects) => {
+      // console.log(students)
+      res.render('subjects-list', {subjects})
+    })
+    .catch((err) => {
+      res.send('Problem loading the page' + err.message)
+    })
 })
 
 routes.get("/add-student", (req, res) => {
@@ -49,19 +59,32 @@ routes.get('/students-list/:id', (req, res) => {
   var stud_id= req.params.id
 
   db('students')
-  .select()
   .where('students.id', stud_id)
   // .first()
   .join('student_subject', 'students.id', 'student_subject.student_id')
-  .select()
+  .join('subjects', 'student_subject.subject_id', 'subjects.id')
   .join('scores', 'student_subject.id', 'scores.student_subject_id')
-  .select('first_name', 'score')
-  .then((student)=> {
-    console.log(student)
-  res.render('student-score', {student})
+  .then((scores)=> {
+  res.render('student-score', {student: scores[0], scores})
 })
 })
 
+routes.get('/subjects-list/:id', (req, res) => {
+  var db = req.app.get('db')
+
+  var subj_id= req.params.id
+
+  db('subjects')
+  .where('subjects.id', subj_id)
+  // .first()
+  .join('student_subject', 'subjects.id', 'student_subject.subject_id')
+  .join('students', 'student_subject.student_id', 'students.id')
+  .join('scores', 'student_subject.id', 'scores.student_subject_id')
+  .then((subject)=> {
+    console.log(subject)
+  res.render('subject-score', {subject})
+})
+})
 
 routes.get('/students/:id/add-score', (req, res) => {
   res.render('add-score', {})
