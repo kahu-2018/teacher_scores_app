@@ -1,7 +1,7 @@
 body {
   background-color: steelblue;
   font-family: 'Muli', sans-serif;
-  color: white;
+  color: #01346E;
   text-align: center; 
   align-content: center;
 }
@@ -19,6 +19,7 @@ body {
 h1 {
   font-weight: bold;
   font-size: 3rem;
+  color: white
 }
 
 .main-page-button a:link {
