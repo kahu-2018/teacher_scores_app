@@ -7,6 +7,7 @@ var routes = require('./routes')
 
 var app = express()
 
+app.use(express.static('public'))
 app.engine('hbs', hbs({
   defaultLayout: 'main',
   extname: 'hbs'
@@ -16,7 +17,6 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 
 app.use('/', routes)
-app.use(express.static('public'))
 
 module.exports = function (db) {
   app.set('db', db)
