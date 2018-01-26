@@ -1,12 +1,13 @@
 <div><h1>STUDENT LIST</h1></div>
-<div>
- <ul>
+<div class="centered-block">
+ <ol>
    {{#each students}}
-    <li>{{first_name}} {{last_name}} <a href="/students-list/{{id}}">See scores</a> <!--<a href="/students/{{id}}/add-score">Add score</a>--></li>
+    <li><span class="alignleft">{{first_name}} {{last_name}}</span><span class="alignright"><a href="/students-list/{{id}}">See scores</a></span><br> 
+     <!--<a href="/students/{{id}}/add-score">Add score</a>--></li>
    {{/each}}
 
    {{#each student}}
     <p>{{id}}</p>
    {{/each}}
- </ul>
+ </ol>
 </div>
