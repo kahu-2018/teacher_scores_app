@@ -11,7 +11,7 @@ routes.get('/home', (req, res) => {
   res.render('index', {greeting: 'Hello World'})
 })
 
-routes.get("/students", (req, res) => {
+routes.get("/students-list", (req, res) => {
   var db = req.app.get('db')
 
   db('students')
@@ -43,7 +43,7 @@ routes.post("/add-student", (req, res) => {
   res.redirect("/confirmationPage")
 })
 
-routes.get('/students/:id', (req, res) => {
+routes.get('/students-list/:id', (req, res) => {
   var db = req.app.get('db')
 
   var stud_id= req.params.id
@@ -51,13 +51,14 @@ routes.get('/students/:id', (req, res) => {
   db('students')
   .select()
   .where('students.id', stud_id)
-  .first()
-  .join('student_subjects', 'students.id', 'student_subjects.student_id')
-  .select('subject_id', 'id')
-  .join('scores', 'student_subjects.id', 'scores.student_subject_id')
+  // .first()
+  .join('student_subject', 'students.id', 'student_subject.student_id')
+  .select()
+  .join('scores', 'student_subject.id', 'scores.student_subject_id')
+  .select('first_name', 'score')
   .then((student)=> {
-    // console.log(student)
-  res.render('student-score', student)
+    console.log(student)
+  res.render('student-score', {student})
 })
 })
 
