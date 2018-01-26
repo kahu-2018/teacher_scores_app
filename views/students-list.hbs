@@ -1,8 +1,8 @@
 <div><h1>STUDENT LIST</h1></div>
-<div>
+<div class="centered-block">
  <ul>
    {{#each students}}
-    <li>{{first_name}} {{last_name}} <a href="/students-list/{{id}}">See scores</a> <!--<a href="/students/{{id}}/add-score">Add score</a>--></li>
+    <li class="no-bullet">{{first_name}} {{last_name}} <a href="/students-list/{{id}}">See scores</a> <!--<a href="/students/{{id}}/add-score">Add score</a>--></li>
    {{/each}}
 
    {{#each student}}
