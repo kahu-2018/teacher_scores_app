@@ -1,8 +1,15 @@
+
+<a href="/">Home</a>
 <div><h1>STUDENT LIST</h1></div>
-<div>
- <ul>
+<div class="centered-block">
+ <ul class="no-bullet">
    {{#each students}}
-    <li>{{student.name}}, {{student.id}}, <a href="/student-score/{{studentid}}">See scores</a>, <a href="/add-score">Add score</a></li>
+    <li><span class="alignleft">{{first_name}} {{last_name}}</span><span class="alignright"><a class="button"href="/studentslist/{{id}}">See scores</a></span><br>
+     <!--<a href="/students/{{id}}/add-score">Add score</a>--></li>
    {{/each}}
+
+   <!-- {{#each student}}
+    <p>{{id}}</p>
+   {{/each}} -->
  </ul>
 </div>
