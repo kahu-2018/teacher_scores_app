@@ -84,3 +84,12 @@ h1 {
 .alignright {
   float: right;
 }
+
+.button {
+  background-color: #01346E;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 0 2px;
+}
