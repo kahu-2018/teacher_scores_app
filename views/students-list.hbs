@@ -2,14 +2,14 @@
 <a href="/">Home</a>
 <div><h1>STUDENT LIST</h1></div>
 <div class="centered-block">
- <ol>
+ <ul class="no-bullet">
    {{#each students}}
-    <li><span class="alignleft">{{first_name}} {{last_name}}</span><span class="alignright"><a class="button"href="/studentslist/{{id}}">See scores</a></span><br> 
+    <li><span class="alignleft">{{first_name}} {{last_name}}</span><span class="alignright"><a class="button"href="/studentslist/{{id}}">See scores</a></span><br>
      <!--<a href="/students/{{id}}/add-score">Add score</a>--></li>
    {{/each}}
 
-   {{#each student}}
+   <!-- {{#each student}}
     <p>{{id}}</p>
-   {{/each}}
- </ol>
+   {{/each}} -->
+ </ul>
 </div>
